@@ -37,4 +37,16 @@ export class AccountService {
     localStorage.removeItem('user');
     this.currentUserSource.next(undefined);
   }
+
+  register(model: any) {
+    return this.http.post(this.baseUrl + 'account/register', model).pipe(
+      map((response: any) => {
+        const user = response;
+        if (user) {
+          localStorage.setItem('user', JSON.stringify(user));
+          this.currentUserSource.next(user);
+        }
+      })
+    )
+  }
 }

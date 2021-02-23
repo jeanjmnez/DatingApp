@@ -30,16 +30,20 @@
                         "styles": [
                             "./node_modules/bootstrap/dist/css/bootstrap.min.css",
                             "./node_modules/ngx-bootstrap/datepicker/bs-datepicker.css",
+                            "./node_modules/font-awesome/css/font-awesome.css",
+                            "./node_modules/ngx-toastr/toastr.css",
                             "src/styles.css"
                         ],
                         "scripts": []
                     },
                     "configurations": {
                         "production": {
-                            "fileReplacements": [{
-                                "replace": "src/environments/environment.ts",
-                                "with": "src/environments/environment.prod.ts"
-                            }],
+                            "fileReplacements": [
+                                {
+                                    "replace": "src/environments/environment.ts",
+                                    "with": "src/environments/environment.prod.ts"
+                                }
+                            ],
                             "optimization": true,
                             "outputHashing": "all",
                             "sourceMap": false,
@@ -47,7 +51,8 @@
                             "extractLicenses": true,
                             "vendorChunk": false,
                             "buildOptimizer": true,
-                            "budgets": [{
+                            "budgets": [
+                                {
                                     "type": "initial",
                                     "maximumWarning": "500kb",
                                     "maximumError": "1mb"
@@ -68,7 +73,6 @@
                         "sslKey": "./ssl/server.key",
                         "ssl": true,
                         "browserTarget": "client:build"
-
                     },
                     "configurations": {
                         "production": {
