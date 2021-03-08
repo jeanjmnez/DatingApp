@@ -51,7 +51,6 @@ namespace API
         {
             app.UseMiddleware<ExceptionMiddleware>();
 
-
             app.UseHttpsRedirection();
 
             app.UseRouting();
@@ -59,7 +58,7 @@ namespace API
                 .AllowAnyMethod()
                 .WithOrigins("https://localhost:4200"));
 
-            app.UseAuthorization();
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
