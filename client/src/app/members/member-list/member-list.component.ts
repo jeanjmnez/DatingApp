@@ -17,6 +17,7 @@ export class MemberListComponent implements OnInit {
     this.loadMembers();
   }
   loadMembers() {
+    console.log('Token:' + localStorage.getItem('user'));
     this.memberService.getMembers().subscribe(members => {
       this.members = members;
     })
